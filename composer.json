@@ -1,0 +1,30 @@
+{
+	"keywords" : [
+		"api",
+		"homebase"
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Homebase\\API\\" : "api",
+			"Homebase\\API\\Objects\\" : "api/objects",
+			"Homebase\\API\\Config\\" : "api/config",
+			"Homebase\\API\\Utils\\" : "api/utilities",
+			"Homebase\\API\\Weather\\" : "api/weather"
+		}
+	},
+	"name" : "Homebase",
+	"type" : "api",
+	"description" : "This is an API for the homebase dashboard project.",
+	"require" : {
+		"php" : ">=7.2",
+		"php-console/php-console" : "~3.1"
+	},
+	"minimum-stability" : "stable",
+	"authors" : [{
+			"name" : "Geoff Groenendale",
+			"email" : "g.groenendale@gmail.com",
+			"homepage" : "https://ggroenendale.github.io",
+			"role" : "Admin"
+		}
+	]
+}

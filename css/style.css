@@ -1,0 +1,158 @@
+/*====================================================================================
+======================================================================================
+                Meyers Reset
+======================================================================================
+====================================================================================*/
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*====================================================================================
+======================================================================================
+                Begin Styles Here
+======================================================================================
+====================================================================================*/
+
+html {
+	height: 100%;
+}
+
+body {
+	height: 100%;
+	background-color: darkblue;
+}
+
+#dash-grid {
+	width: 93%;
+	height: 100%;
+	margin: auto;
+	display: grid;
+	grid-template-columns: 32% 32% 32%;
+	grid-template-rows: 50% 50%;
+	grid-column-gap: 2%;
+}
+
+.grid-block {
+	border: 1px solid red;
+	background-color: grey;
+	color: white;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+p {
+	font-size: 1.2em;
+}
+
+
+#hex1 {
+	height: 200px;
+	width: 200px;
+}
+
+#color1 {
+	background-color: red;
+}
+
+.hexagon-wrapper {
+	text-align: center;
+	margin: 20px;
+	position: relative;
+	display: inline-block;
+}
+
+.hexagon {
+	height: 100%;
+	width: calc(100% * 0.57735);
+	display: inline-block;
+}
+
+.hexagon:before {
+	position: absolute;
+	top: 0;
+	right: calc((100% / 2) - ((100% * 0.57735) / 2));
+	background-color: inherit;
+	height: inherit;
+	width: inherit;
+	content: '';
+	transform: rotateZ(60deg);
+}
+
+.hexagon:after {
+	position: absolute;
+	top: 0;
+	right: calc((100% / 2) - ((100% * 0.57735) / 2));
+	background-color: inherit;
+	height: inherit;
+	width: inherit;
+	content: '';
+	transform: rotateZ(-60deg);
+}
+
+.hexagon:hover {
+	transform: rotateZ(90deg);
+	transition: 1s;
+	transform-style: preserve-3d;
+}
+
+.hexagon:hover::before {
+	transform: rotateZ(calc(90deg + 60deg));
+	transition: 1s;
+	height: inherit;
+  	width: inherit;
+  	transform-style: preserve-3d;
+}
+
+.hexagon:hover::after {
+	transform: rotateZ(calc(90deg - 60deg));
+	transition: 1s;
+	height: inherit;
+  	width: inherit;
+  	transform-style: preserve-3d;
+}
