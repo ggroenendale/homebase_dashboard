@@ -1,5 +1,6 @@
 #Ignore Created Batch files
 batch_files/*
 
-#Ignore vendor files
+#Ignore vendor files and composer.lock
 vendor/*
+composer.lock
