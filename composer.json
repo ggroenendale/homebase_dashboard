@@ -6,6 +6,7 @@
 	"autoload" : {
 		"psr-4" : {
 			"Homebase\\API\\" : "api",
+			"Homebase\\API\\Music\\" : "api/music",
 			"Homebase\\API\\Objects\\" : "api/objects",
 			"Homebase\\API\\Config\\" : "api/config",
 			"Homebase\\API\\Utils\\" : "api/utilities",
@@ -17,7 +18,8 @@
 	"description" : "This is an API for the homebase dashboard project.",
 	"require" : {
 		"php" : ">=7.2",
-		"php-console/php-console" : "~3.1"
+		"php-console/php-console" : "~3.1",
+		"google/apiclient": "^2.0"
 	},
 	"minimum-stability" : "stable",
 	"authors" : [{

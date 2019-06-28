@@ -39,7 +39,7 @@ class Weather {
 		$this->weather['temp_c'] = $this->weather['temp_k'] - 273.15;
 		$this->weather['humidity'] = $this->weather_data->main->humidity;
 		$this->weather['wind_speed'] = (string)$this->weather_data->wind->speed;
-		$this->weather['wind_direc'] = (string)$this->weather_data->wind->deg;
+		$this->weather['wind_direc'] = isset($this->weather_data->wind->deg) ? (string)$this->weather_data->wind->deg : "Null";
 		$this->weather['pressure'] = (string)$this->weather_data->main->pressure;
 		$this->weather['clouds'] = (string)$this->weather_data->clouds->all;
 		$this->weather['sunrise'] = (int)$this->weather_data->sys->sunrise;
@@ -50,12 +50,30 @@ class Weather {
 	// Get the nearest weather hub location
 	public function get_location(){
 		// Load the location data
-		$data = file_get_contents('https://maps.google.com/maps/api/geocode/json?sensor=true&latlng=' . $this->lat . ',' . $this->long . '&key=' . $this->goog_key);
-		$this->location_data = json_decode($data);
+		$loc_url = 'https://maps.google.com/maps/api/geocode/json?sensor=true&latlng=' . $this->lat . ',' . $this->long . '&key=' . $this->goog_key;
+		$loc_url = urldecode($loc_url);
+		// Send through PHP CURL
+		$curl = curl_init();
+		curl_setopt($curl, CURLOPT_URL, $loc_url);
+		curl_setopt($curl, CURLOPT_HTTPGET, 1);
+		//curl_setopt($curl, CURLOPT_POSTFIELDS)
+		curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
 
-		// Set the name based on the location. e.g: Portsmouth, England
-		$this->location = $this->location_data->results[1]->address_components[1]->short_name . ', ' . $this->location_data->results[1]->address_components[3]->short_name . ', ' . $this->location_data->results[1]->address_components[5]->short_name;
-		return $this;
+		$output = curl_exec($curl);
+		curl_close($curl);
+
+		$this->location_data = json_decode($output);
+
+		if($this->location_data->status == "OK") {
+			// Set the name based on the location. e.g: Portsmouth, England
+			$this->location = $this->location_data->results[1]->address_components[1]->short_name . ', ' . $this->location_data->results[1]->address_components[3]->short_name . ', ' . $this->location_data->results[1]->address_components[5]->short_name;
+			return $this;
+		}
+		else {
+			print_r($this->location_data);
+			return "something went wrong";
+		}
+		//$data = file_get_contents($loc_url);
 	}
 
 	public function say_location(){
@@ -103,7 +121,6 @@ class Weather {
 		$num = (((($ms / 1000) / 1.61) * 60) *60);
 		$milehr = number_format((float)$num, 2, '.', '');
 		$ang = $this->weather['wind_direc'];
-		$ang_int = ((($ang) / 22.5) + 0.5) + 1;
 		$dir = array(
 			'1' => 'N',
 			'2' => 'NNE',
@@ -123,9 +140,18 @@ class Weather {
 			'16' => 'NNW',
 			'17' => 'N'
 		);
+		$direction = '';
+		if (is_numeric($ang)) {
+			$ang_int = ((($ang) / 22.5) + 0.5) + 1;
+			$direction = $dir[abs($ang_int)];
+		}
+		else {
+			$direction = "NSEW";
+		}
+
 
 		//
-		$direction = $dir[abs($ang_int)];
+
 
 		//
 		//$wind = $milehr . ' mph ' . '(' . $ms . 'm/s) ' . $direction . ' (' . number_format((float)$ang, 2, '.', '') . '°)';
