@@ -14,6 +14,7 @@
 
 <div id="dash-grid">
 	<div class="grid-block">
+		<div id="time"></div>
 		<h2>Weather:</h2>
 		<div id="weather"></div>
 		<h2>Stocks:</h2>
@@ -36,11 +37,12 @@
 	</div>
 	<div class="grid-block">Financial Budget Info</div>
 	<div class="grid-block">
-		<p>Stocks</p>
+		<p>Calories</p>
+		<?php include 'parts/calories.php'?>
 	</div>
 	<div class="grid-block">
 		<p>Temperature Feedback</p>
-		<p>- What heater is currently on</p>
+		<p>- What heater is currently on testing</p>
 		<!-- <div id="hex1" class="hexagon-wrapper">
 			<div id="color1" class="hexagon"></div>
 		</div> -->
@@ -48,10 +50,12 @@
 		<div id="drawing"></div>
 
 	</div>
-	<?php phpinfo();?>
 </div>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript" src="/homebase/js/three.min.js"></script>
 <script type="text/javascript" src="/homebase/js/svg.js"></script>
+<script type="text/javascript" src="/homebase/js/pixi.min.js"></script>
 <script type="text/javascript" src="/homebase/js/scripts.js"></script>
+<script type="text/javascript" src="/homebase/js/physio.js"></script>
 </body>
 </html>

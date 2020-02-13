@@ -4,3 +4,9 @@ batch_files/*
 #Ignore vendor files and composer.lock
 vendor/*
 composer.lock
+
+# Ignore watchdog files
+.watchdog/
+
+# Ignore Visual Studio Code viles
+.vscode/

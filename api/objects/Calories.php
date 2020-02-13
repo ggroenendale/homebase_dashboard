@@ -1,6 +1,6 @@
 <?php
 //State the namespace this file is a part of.
-namespace Homebase\API\Objects;
+namespace Homebase\API;
 
 /**
  * Enable the tracking and management of daily calories consumed.
@@ -19,3 +19,7 @@ namespace Homebase\API\Objects;
  * 6.) Record consumption of food, reduction in calories used, and update calories left
  * 7.) Update other nutritional values like macros consumed and what not.
  */
+Class Calories {
+
+    public $test;
+}
