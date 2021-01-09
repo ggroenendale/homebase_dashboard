@@ -1,6 +1,6 @@
-<mxfile host="app.diagrams.net" modified="2021-01-07T21:34:40.368Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 OPR/73.0.3856.284" etag="apEvRGIa3SHeRgXEJB-Y" version="14.1.5" type="github">
+<mxfile host="app.diagrams.net" modified="2021-01-09T00:15:52.584Z" agent="5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.88 Safari/537.36 OPR/73.0.3856.284" etag="D1H9zfx06-5oS5k4yuwR" version="14.1.5" type="github">
   <diagram id="chUx75y0vAaIqrl9WMwS" name="Page-1">
-    <mxGraphModel dx="4750" dy="2492" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="5190" dy="2770" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -268,8 +268,14 @@
         <mxCell id="a-PpkgbKHKiEm6CQ7iPh-22" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.75;exitY=0;exitDx=0;exitDy=0;entryX=0.871;entryY=0.998;entryDx=0;entryDy=0;entryPerimeter=0;fontSize=24;startArrow=classic;startFill=1;" edge="1" parent="1" source="a-PpkgbKHKiEm6CQ7iPh-17" target="a-PpkgbKHKiEm6CQ7iPh-21">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
+        <mxCell id="a-PpkgbKHKiEm6CQ7iPh-29" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;startArrow=classic;startFill=1;strokeWidth=16;fontSize=32;" edge="1" parent="1">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="320" y="960" as="targetPoint" />
+            <mxPoint x="520" y="960" as="sourcePoint" />
+          </mxGeometry>
+        </mxCell>
         <mxCell id="a-PpkgbKHKiEm6CQ7iPh-17" value="IMPORTS ALL API MODULES&lt;br&gt;&lt;br&gt;Installed onto Docker Instance" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" vertex="1" parent="1">
-          <mxGeometry x="520" y="638" width="280" height="602" as="geometry" />
+          <mxGeometry x="520" y="640" width="280" height="640" as="geometry" />
         </mxCell>
         <mxCell id="a-PpkgbKHKiEm6CQ7iPh-18" value="Front End Dashboard" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
           <mxGeometry y="598" width="320" height="20" as="geometry" />
@@ -284,19 +290,22 @@
           <mxGeometry x="520" y="320" width="240" height="180" as="geometry" />
         </mxCell>
         <mxCell id="a-PpkgbKHKiEm6CQ7iPh-23" value="TV&lt;br&gt;(Raspberry Pi, BeagleBoard)" style="rounded=0;whiteSpace=wrap;html=1;fontSize=24;" vertex="1" parent="1">
-          <mxGeometry y="638" width="320" height="162" as="geometry" />
+          <mxGeometry y="640" width="320" height="160" as="geometry" />
         </mxCell>
         <mxCell id="a-PpkgbKHKiEm6CQ7iPh-24" value="Main API Wrapper" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
           <mxGeometry x="520" y="598" width="270" height="20" as="geometry" />
         </mxCell>
         <mxCell id="a-PpkgbKHKiEm6CQ7iPh-25" value="Desktop" style="rounded=0;whiteSpace=wrap;html=1;fontSize=24;" vertex="1" parent="1">
-          <mxGeometry y="800" width="320" height="162" as="geometry" />
+          <mxGeometry y="800" width="320" height="160" as="geometry" />
         </mxCell>
         <mxCell id="a-PpkgbKHKiEm6CQ7iPh-26" value="Laptop" style="rounded=0;whiteSpace=wrap;html=1;fontSize=24;" vertex="1" parent="1">
-          <mxGeometry y="962" width="320" height="162" as="geometry" />
+          <mxGeometry y="960" width="320" height="160" as="geometry" />
         </mxCell>
         <mxCell id="a-PpkgbKHKiEm6CQ7iPh-27" value="Mobile" style="rounded=0;whiteSpace=wrap;html=1;fontSize=24;" vertex="1" parent="1">
-          <mxGeometry y="1124" width="320" height="162" as="geometry" />
+          <mxGeometry y="1120" width="320" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="a-PpkgbKHKiEm6CQ7iPh-30" value="Documentation Module&lt;br&gt;&lt;br&gt;Reads installed and imported modules for Documentation, displays back to a Docs route" style="rounded=0;whiteSpace=wrap;html=1;align=left;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="-400" y="638" width="240" height="180" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
